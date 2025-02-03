@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://d26bwiipep0ad"]
+[gd_scene load_steps=64 format=4 uid="uid://d26bwiipep0ad"]
 
 [ext_resource type="Texture2D" uid="uid://b36vb14p3bcc1" path="res://Room/Tilemap/tilemap.png" id="1_v2y6k"]
 
@@ -316,7 +316,10 @@ size = Vector2(282.25, 36)
 size = Vector2(138.375, 13)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r1xqj"]
-polygon = PackedVector2Array(383, 892, 387, 855, 556, 856, 552, 777, 675, 775, 677, 802, 642, 804, 645, 874)
+polygon = PackedVector2Array(304, 884, 304, 791, 391, 791, 391, 855, 551, 855, 551, 775, 679, 775, 679, 807, 647, 807, 647, 871, 759, 871, 759, 855, 999, 855, 999, 871, 1127, 871, 1127, 791, 999, 791, 999, 800, 993, 800, 993, 815, 981, 769, 1139, 751, 1138, 886)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m7nef"]
+polygon = PackedVector2Array(157, 381, 263, 170, 273, 175, 274, 350, 385, 352, 386, 411)
 
 [node name="Scenary" type="Node2D"]
 
@@ -573,3 +576,6 @@ shape = SubResource("RectangleShape2D_axl0r")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
 occluder = SubResource("OccluderPolygon2D_r1xqj")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="StaticBody2D"]
+occluder = SubResource("OccluderPolygon2D_m7nef")
