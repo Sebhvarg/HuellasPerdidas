@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://djqnkd873uvjx"]
+
+[ext_resource type="PackedScene" uid="uid://d26bwiipep0ad" path="res://PJ/pj/Mapa.tscn" id="1_8knfs"]
+[ext_resource type="PackedScene" uid="uid://byd2ju4cbo84e" path="res://PJ/pj/pj.tscn" id="2_ubsb1"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_8w46g"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_ultol"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_rvpiy"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="6_dwn3e"]
+
+[sub_resource type="Resource" id="Resource_mo8jg"]
+script = ExtResource("5_rvpiy")
+duration = 2.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_iphwv"]
+script = ExtResource("6_dwn3e")
+amplitude = 5.0
+frequency = 1.268
+randomize_noise_seed = 1
+noise_seed = 7
+positional_noise = true
+rotational_noise = false
+positional_multiplier_x = 0.106
+positional_multiplier_y = 0.788
+rotational_multiplier = 0.0
+
+[node name="Find Messi" type="Node2D"]
+
+[node name="Scenary" parent="." instance=ExtResource("1_8knfs")]
+modulate = Color(0.324203, 0.324203, 0.324203, 1)
+show_behind_parent = true
+position = Vector2(-329, -172)
+
+[node name="PJ" parent="." instance=ExtResource("2_ubsb1")]
+position = Vector2(186, 99)
+disable_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="PJ"]
+physics_interpolation_mode = 1
+offset = Vector2(-0.0310759, 0.219145)
+zoom = Vector2(2, 2)
+limit_left = -9999996
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="PJ/Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("3_8w46g")
+
+[node name="PhantomCamera2D" type="Node2D" parent="PJ/Camera2D" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(186, 99)
+script = ExtResource("4_ultol")
+follow_mode = 5
+follow_target = NodePath("../..")
+zoom = Vector2(2, 2)
+tween_resource = SubResource("Resource_mo8jg")
+draw_limits = true
+limit_left = -9999996
+noise = SubResource("Resource_iphwv")
