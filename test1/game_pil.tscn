@@ -52,11 +52,11 @@ position = Vector2(706, 385)
 texture = ExtResource("2_y4ncq")
 
 [node name="PJ" parent="." instance=ExtResource("4_qdgj2")]
-position = Vector2(1137, 28)
+position = Vector2(595, 193)
 
 [node name="Camera2D" type="Camera2D" parent="PJ"]
 physics_interpolation_mode = 1
-position = Vector2(-0.000366211, 5.72205e-06)
+position = Vector2(-0.000183105, 6.10352e-05)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="PJ/Camera2D"]
@@ -66,7 +66,7 @@ script = ExtResource("5_6w2yl")
 
 [node name="PhantomCamera2D" type="Node2D" parent="PJ" node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(1137, 28)
+position = Vector2(595, 193)
 script = ExtResource("6_gxcg4")
 follow_mode = 5
 follow_target = NodePath("..")

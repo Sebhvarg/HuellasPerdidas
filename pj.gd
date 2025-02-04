@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @onready var animats = $AnimatedSprite2D
 @export var speed: float = 150.0  # Velocidad del personaje
+var dialogo_npc_mostrado = false  # Para el diálogo del NPC
+var dialogo_cofre = false  # Para el diálogo del Fantasmin
+
 func _physics_process(delta):
 
 	var direction = Vector2.ZERO
@@ -25,7 +28,9 @@ func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	Dialogic.start("DialogNPC")
+	if not dialogo_npc_mostrado:  # Solo muestra el diálogo si no se ha mostrado antes
+		Dialogic.start("DialogNPC")
+		dialogo_npc_mostrado = true  # Marca que ya se mostró el diálogo
 	pass # Replace with function body.
 
 
@@ -35,5 +40,7 @@ func _on_fantasmin_body_entered(body: Node2D) -> void:
 
 
 func _on_cofre_body_entered(body: Node2D) -> void:
-	Dialogic.start("DialogCHT")
+	if not dialogo_cofre:
+		Dialogic.start("DialogCHT")
+		dialogo_cofre = true
 	pass # Replace with function body.
