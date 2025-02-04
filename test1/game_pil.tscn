@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://7holqkdxavp5"]
+[gd_scene load_steps=18 format=3 uid="uid://7holqkdxavp5"]
 
 [ext_resource type="PackedScene" uid="uid://d26bwiipep0ad" path="res://PJ/pj/Mapa.tscn" id="1_yjg14"]
 [ext_resource type="Texture2D" uid="uid://cg50akr4k5u2f" path="res://Room/Tiles/tile_0064.png" id="2_y4ncq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_iu0ka"]
 [ext_resource type="Texture2D" uid="uid://xqtn7it7ybl4" path="res://Room/Tiles/tile_0112.png" id="7_kpk4j"]
 [ext_resource type="Texture2D" uid="uid://3kknud070c7a" path="res://Room/Tiles/tile_0121.png" id="9_mqj1i"]
+[ext_resource type="PackedScene" uid="uid://cap22g6lj161l" path="res://test1/control.tscn" id="10_2xpul"]
 [ext_resource type="Texture2D" uid="uid://dtlbxplv6nqk" path="res://Room/Tiles/tile_0089.png" id="10_33bb6"]
 
 [sub_resource type="Resource" id="Resource_r1mk0"]
@@ -56,7 +57,7 @@ position = Vector2(595, 193)
 
 [node name="Camera2D" type="Camera2D" parent="PJ"]
 physics_interpolation_mode = 1
-position = Vector2(-0.000183105, 6.10352e-05)
+position = Vector2(-0.000183105, 4.57764e-05)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="PJ/Camera2D"]
@@ -113,6 +114,8 @@ texture = ExtResource("10_33bb6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cofre/Cofre"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_15wf6")
+
+[node name="Control" parent="." instance=ExtResource("10_2xpul")]
 
 [connection signal="body_entered" from="NPC1/Area2D" to="PJ" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Fantasma/Fantasmin" to="PJ" method="_on_fantasmin_body_entered"]

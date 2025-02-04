@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://cap22g6lj161l"]
+
+[ext_resource type="Script" path="res://test1/control.gd" id="1_1ma3l"]
+[ext_resource type="Texture2D" uid="uid://bqiaay4o3u7h4" path="res://assets/bg_Home.png" id="2_0i6vy"]
+[ext_resource type="Texture2D" uid="uid://7al2l0cjwsej" path="res://PJ/dog..png" id="3_ey50j"]
+
+[sub_resource type="Animation" id="Animation_lvgd4"]
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/AnimationPlayer/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [28, 29, 28]
+}
+
+[sub_resource type="Animation" id="Animation_dyb0y"]
+resource_name = "inicio"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/AnimationPlayer/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2, 2.43333, 2.83333, 3.23333, 3.63333, 4.06667, 4.43333, 4.8, 5.16667, 5.53333, 5.93333, 6.26667, 6.63333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 28, 29, 27, 16, 17, 18, 17, 16, 17, 18, 19, 27, 28, 29, 28, 29]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o0nov"]
+_data = {
+"RESET": SubResource("Animation_lvgd4"),
+"inicio": SubResource("Animation_dyb0y")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -4.0
+offset_top = -811.0
+offset_right = 1200.0
+offset_bottom = -7.0
+script = ExtResource("1_1ma3l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -104.0
+offset_right = 1201.0
+offset_bottom = 820.0
+scale = Vector2(0.966484, 0.815145)
+texture = ExtResource("2_0i6vy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_o0nov")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect/AnimationPlayer"]
+position = Vector2(333, -289)
+scale = Vector2(8.08147, 7.48645)
+texture = ExtResource("3_ey50j")
+hframes = 4
+vframes = 9
+frame = 28
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 265.0
+offset_right = 1100.0
+offset_bottom = 507.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Jugar
+"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Salir
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(587, 326)
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="salir_btn"]
