@@ -1,0 +1,9 @@
+join Chest center
+leave Chest [animation="Fade Out" length="0.4"]
+join Chest2 center [animation="Fade In" length="1.0" wait="true"]
+[wait time="1.0"]
+leave Chest2
+PJ: ow, una llave.
+join DOVE center
+[wait time="1.0"]
+leave DOVE

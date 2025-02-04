@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwxkgqe4j6c83"]
+
+[ext_resource type="Script" path="res://Dialogs/CustomNewFile/default_layout_base.gd" id="1_ifsho"]
+
+[node name="Custom" type="CanvasLayer"]
+script = ExtResource("1_ifsho")

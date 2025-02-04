@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c21s6xii07je4"]
+
+[ext_resource type="Texture2D" uid="uid://xqtn7it7ybl4" path="res://Room/Tiles/tile_0112.png" id="1_4f2us"]
+[ext_resource type="Script" path="res://PJ/pj/npc.gd" id="1_21648"]
+[ext_resource type="Script" path="res://PJ/pj/area_2d.gd" id="3_i6il2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nnl5n"]
+radius = 24.0
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(1.19209e-07, 1.19209e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_4f2us")
+script = ExtResource("1_21648")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_i6il2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_nnl5n")

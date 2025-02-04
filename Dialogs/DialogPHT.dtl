@@ -1,0 +1,17 @@
+join Phantom center
+Phantom: Waaa... En mi tiempoo la rivalidad era entre Bobby Charlton y Endrick
+PJ: Bobby Charlton y Endrick?
+Phantom: Sí... Peroo haaayy un soolo gooaat, ¿tú saaabes quién es?
+- Lionel Andrés Messi
+	Phantom: Correectooo, teen eestoo me lo encontré een el más allaaá.
+	join Skeleton center
+	[wait time="1.0"]
+	leave Skeleton
+- Cristanio Ronaldo dos Santos
+	Phantom: Roobandoo?
+	[end_timeline]
+- Antony Matheus dos Santos
+	Phantom: Exaactoo, correctoo..
+	join Skeleton center
+	[wait time="0.4"]
+	leave Skeleton

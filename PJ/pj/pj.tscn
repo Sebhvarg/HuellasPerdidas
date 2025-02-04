@@ -176,20 +176,22 @@ size = Vector2(17, 26)
 [node name="PJ" type="CharacterBody2D"]
 script = ExtResource("1_8556m")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 2.64
+blend_mode = 2
+range_z_min = -512
+range_z_max = 512
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_item_cull_mask = 3
+texture = ExtResource("6_ih3di")
+texture_scale = 0.3
+height = 1.0
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2njrs")
 animation = &"Idle"
 frame_progress = 0.693012
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 3.05
-blend_mode = 2
-range_z_min = -512
-range_z_max = 512
-shadow_enabled = true
-texture = ExtResource("6_ih3di")
-texture_scale = 0.5
-height = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 3)

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=4 format=3 uid="uid://cmffvghd000lt"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_cgaho"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_krldb"]
+
+[sub_resource type="Resource" id="Resource_qs2n8"]
+script = ExtResource("1_cgaho")
+overrides = {}
+
+[resource]
+script = ExtResource("2_krldb")
+name = "New_File"
+layer_list = Array[String]([])
+layer_info = {
+"": SubResource("Resource_qs2n8")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_cgaho")]([])
+metadata/_latest_layer = ""
