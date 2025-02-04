@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://beqfciyopiox"]
+[gd_scene load_steps=35 format=3 uid="uid://beqfciyopiox"]
 
 [ext_resource type="Texture2D" uid="uid://7al2l0cjwsej" path="res://PJ/dog..png" id="1_cmq8k"]
 [ext_resource type="Texture2D" uid="uid://ck0et50dwb5as" path="res://PJ/pj/dog..png" id="2_cm3x3"]
@@ -263,17 +263,8 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l782h"]
-radius = 5.0
-height = 10.0
-
 [node name="Messi" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7oo7m")
 animation = &"Run"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_l782h")

@@ -1,7 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://7holqkdxavp5"]
 
 [ext_resource type="PackedScene" uid="uid://d26bwiipep0ad" path="res://PJ/pj/Mapa.tscn" id="1_yjg14"]
-[ext_resource type="PackedScene" uid="uid://beqfciyopiox" path="res://PJ/pj/messi.tscn" id="2_frykw"]
 [ext_resource type="Texture2D" uid="uid://cg50akr4k5u2f" path="res://Room/Tiles/tile_0064.png" id="2_y4ncq"]
 [ext_resource type="PackedScene" uid="uid://byd2ju4cbo84e" path="res://PJ/pj/pj.tscn" id="4_qdgj2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_6w2yl"]
@@ -30,6 +29,10 @@ light_mode = 2
 radius = 4.0
 height = 12.0
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_loqjk"]
+blend_mode = 3
+light_mode = 2
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15wf6"]
 size = Vector2(14, 9)
 
@@ -49,10 +52,11 @@ position = Vector2(706, 385)
 texture = ExtResource("2_y4ncq")
 
 [node name="PJ" parent="." instance=ExtResource("4_qdgj2")]
-position = Vector2(638, 207)
+position = Vector2(1137, 28)
 
 [node name="Camera2D" type="Camera2D" parent="PJ"]
 physics_interpolation_mode = 1
+position = Vector2(-0.000366211, 5.72205e-06)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="PJ/Camera2D"]
@@ -62,15 +66,15 @@ script = ExtResource("5_6w2yl")
 
 [node name="PhantomCamera2D" type="Node2D" parent="PJ" node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(638, 207)
+position = Vector2(1137, 28)
 script = ExtResource("6_gxcg4")
 follow_mode = 5
 follow_target = NodePath("..")
 zoom = Vector2(3, 3)
 tween_resource = SubResource("Resource_r1mk0")
-
-[node name="Messi" parent="." instance=ExtResource("2_frykw")]
-position = Vector2(135, -66)
+follow_damping = true
+follow_damping_value = Vector2(0.3, 0.3)
+_preview_noise = false
 
 [node name="NPC1" type="Sprite2D" parent="."]
 light_mask = 2
@@ -86,29 +90,30 @@ texture = ExtResource("7_kpk4j")
 position = Vector2(0.275862, 0.258065)
 shape = SubResource("CircleShape2D_lqorx")
 
-[node name="NPC2" type="Sprite2D" parent="."]
+[node name="Fantasma" type="Sprite2D" parent="."]
 material = SubResource("CanvasItemMaterial_8o3f7")
 position = Vector2(841, 327)
 scale = Vector2(1.3125, 1.3125)
 texture = ExtResource("9_mqj1i")
 
-[node name="Fantasmin" type="Area2D" parent="NPC2"]
+[node name="Fantasmin" type="Area2D" parent="Fantasma"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/Fantasmin"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fantasma/Fantasmin"]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_t6ygs")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Cofre" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_loqjk")
 position = Vector2(1114, 44)
 rotation = -1.5708
 texture = ExtResource("10_33bb6")
 
-[node name="Cofre" type="Area2D" parent="Sprite2D"]
+[node name="Cofre" type="Area2D" parent="Cofre"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Cofre"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cofre/Cofre"]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_15wf6")
 
 [connection signal="body_entered" from="NPC1/Area2D" to="PJ" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="NPC2/Fantasmin" to="PJ" method="_on_fantasmin_body_entered"]
-[connection signal="body_entered" from="Sprite2D/Cofre" to="PJ" method="_on_cofre_body_entered"]
+[connection signal="body_entered" from="Fantasma/Fantasmin" to="PJ" method="_on_fantasmin_body_entered"]
+[connection signal="body_entered" from="Cofre/Cofre" to="PJ" method="_on_cofre_body_entered"]

@@ -177,7 +177,7 @@ size = Vector2(17, 26)
 script = ExtResource("1_8556m")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 2.64
+energy = 1.82
 blend_mode = 2
 range_z_min = -512
 range_z_max = 512
