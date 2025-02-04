@@ -7,3 +7,4 @@ PJ: ow, una llave.
 join DOVE center
 [wait time="1.0"]
 leave DOVE
+[signal arg="dove_get"]
