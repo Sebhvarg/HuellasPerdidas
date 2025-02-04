@@ -8,7 +8,7 @@ var dialogo_cofre = false  # Para el diálogo del Fantasmin
 func _physics_process(delta):
 
 	var direction = Vector2.ZERO
-	
+		
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
 		animats.play("right")

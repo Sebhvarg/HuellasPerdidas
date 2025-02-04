@@ -8,10 +8,10 @@ NPC: Hey niño, ¿quieres una llave?
 		[wait time="1.0"]
 		join  center
 		leave Celtic [length="0.6"]
+		[signal arg="celtic_get"]
 	- 3
 		NPC: Bobo.
 	[end_timeline]
-	[signal arg="exit_npc"]
 - No
 	NPC: Posi, conste, bobo.
 	[end_timeline]

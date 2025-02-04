@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://beqfciyopiox"]
+[gd_scene load_steps=36 format=3 uid="uid://beqfciyopiox"]
 
 [ext_resource type="Texture2D" uid="uid://7al2l0cjwsej" path="res://PJ/dog..png" id="1_cmq8k"]
+[ext_resource type="Script" path="res://PJ/pj/messi.gd" id="1_thryv"]
 [ext_resource type="Texture2D" uid="uid://ck0et50dwb5as" path="res://PJ/pj/dog..png" id="2_cm3x3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcy8a"]
@@ -144,7 +145,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Abajo",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 0.8,
@@ -161,7 +162,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Arriba",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 0.8,
@@ -178,7 +179,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Derecha",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.2,
@@ -204,32 +205,32 @@ animations = [{
 "speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_1qnpf")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_kh8sl")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_m15jy")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": SubResource("AtlasTexture_5xdoi")
 }],
 "loop": false,
 "name": &"Idle",
-"speed": 12.0
+"speed": 4.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_w4xq2")
 }, {
-"duration": 1.0,
+"duration": 0.3,
 "texture": SubResource("AtlasTexture_8vpwp")
 }],
 "loop": true,
 "name": &"Idle 2",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -246,7 +247,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Izquierda",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 0.6,
@@ -264,8 +265,8 @@ animations = [{
 }]
 
 [node name="Messi" type="CharacterBody2D"]
+script = ExtResource("1_thryv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Animatod" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7oo7m")
-animation = &"Izquierda"
-frame_progress = 0.534064
+animation = &"Run"

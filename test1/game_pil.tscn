@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d26bwiipep0ad" path="res://PJ/pj/Mapa.tscn" id="1_yjg14"]
 [ext_resource type="Texture2D" uid="uid://cg50akr4k5u2f" path="res://Room/Tiles/tile_0064.png" id="2_y4ncq"]
+[ext_resource type="PackedScene" uid="uid://beqfciyopiox" path="res://PJ/pj/messi.tscn" id="4_j1y0a"]
 [ext_resource type="PackedScene" uid="uid://byd2ju4cbo84e" path="res://PJ/pj/pj.tscn" id="4_qdgj2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_6w2yl"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_gxcg4"]
@@ -52,7 +53,13 @@ position = Vector2(135, -66)
 position = Vector2(706, 385)
 texture = ExtResource("2_y4ncq")
 
-[node name="PJ" parent="." instance=ExtResource("4_qdgj2")]
+[node name="Messi" parent="." instance=ExtResource("4_j1y0a")]
+z_index = 1
+position = Vector2(595, 193)
+collision_layer = 3
+collision_mask = 3
+
+[node name="PJ" parent="." groups=["PJS"] instance=ExtResource("4_qdgj2")]
 position = Vector2(595, 193)
 
 [node name="Camera2D" type="Camera2D" parent="PJ"]

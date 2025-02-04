@@ -71,6 +71,10 @@ text/autoskip_time_per_event=0.11
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
+[global_group]
+
+PJS=""
+
 [input]
 
 ui_left={

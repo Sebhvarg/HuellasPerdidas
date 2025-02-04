@@ -1,19 +1,47 @@
 extends CharacterBody2D
 
-@export var velocidad: float = 100.0  # Velocidad del perro
-@onready var jugador = get_node("../PJ")  # Ruta del jugador
+var speed = 150
+@onready var animations = $Animatod
+@export var distancia_minima: float = 30.0
+@onready var jugador = null
+var idle_repetido = false
+func _ready():
+	var jugadores = get_tree().get_nodes_in_group("PJS")
+	if jugadores.size() > 0:
+		jugador = jugadores[0]
 
-@export var distancia_minima: float = 50.0  # Distancia mínima antes de dejar de moverse
-
-
-func _physics_process(delta):
-	if jugador:
-		var distancia = global_position.distance_to(jugador.global_position)
-
-		if distancia > distancia_minima:  # Solo se mueve si está demasiado lejos
-			var direccion = (jugador.global_position - global_position).normalized()
-			velocity = direccion * velocidad
+func _physics_process(delta: float) -> void:
+	var direction = Vector2.ZERO
+	
+	if jugador == null:
+		return
+	var distancia = global_position.distance_to(jugador.global_position)
+	if distancia > distancia_minima:  # Solo se mueve si está más lejos de la distancia mínima
+		var direccion = (jugador.global_position - global_position).normalized()
+		reproducir_animacion_movimiento(direccion)
+		idle_repetido = false  
+		velocity = direccion * speed
+	else:
+		velocity = Vector2.ZERO  
+		reproducir_animacion_idle()
+		
+	move_and_slide()
+func reproducir_animacion_movimiento(direccion: Vector2):
+	if abs(direccion.x) > abs(direccion.y):  # Movimiento horizontal
+		if direccion.x > 0:
+			animations.play("Derecha")
 		else:
-			velocity = Vector2.ZERO  # Se queda quieto si está a la distancia correcta
-
-		move_and_slide()
+			animations.play("Izquierda")
+	else:  # Movimiento vertical
+		if direccion.y > 0:
+			animations.play("Abajo")
+		else:
+			animations.play("Arriba")
+			
+func reproducir_animacion_idle():
+	if not idle_repetido:
+		animations.play("Idle")
+		await animations.animation_finished  # Espera que "Idle" termine
+		idle_repetido = true  # Marca que ya se reprodujo una vez
+		
+	animations.play("Idle 2")  # Luego, siempre reproduce "Idle 2"

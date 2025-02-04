@@ -7,6 +7,7 @@ Phantom: Sí... Peroo haaayy un soolo gooaat, ¿tú saaabes quién es?
 	join Skeleton center
 	[wait time="1.0"]
 	leave Skeleton
+	[signal arg="skeleton_get"]
 - Cristanio Ronaldo dos Santos
 	Phantom: Roobandoo?
 	[end_timeline]
@@ -15,3 +16,4 @@ Phantom: Sí... Peroo haaayy un soolo gooaat, ¿tú saaabes quién es?
 	join Skeleton center
 	[wait time="0.4"]
 	leave Skeleton
+	[signal arg="skeleton_get"]
