@@ -1,6 +1,20 @@
-[gd_scene load_steps=66 format=4 uid="uid://d26bwiipep0ad"]
+[gd_scene load_steps=67 format=4 uid="uid://d26bwiipep0ad"]
 
 [ext_resource type="Texture2D" uid="uid://b36vb14p3bcc1" path="res://Room/Tilemap/tilemap.png" id="1_v2y6k"]
+
+[sub_resource type="GDScript" id="GDScript_qqoki"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl5bu"]
 texture = ExtResource("1_v2y6k")
@@ -328,6 +342,7 @@ polygon = PackedVector2Array(574, 442, 574, 490, 606, 490, 606, 474, 654, 474, 6
 polygon = PackedVector2Array(491, 343, 602, 342, 603, 279, 651, 279, 652, 327, 891, 327, 891, 247, 1019, 247, 1019, 519, 923, 519, 923, 455, 859, 455, 859, 439, 891, 439, 891, 375, 795, 375, 795, 439, 827, 439, 827, 455, 731, 455, 731, 439, 763, 439, 763, 375, 667, 375, 667, 439, 699, 439, 699, 455, 665, 455, 634, 455, 635, 519, 491, 519, 491, 471, 523, 471, 523, 487, 571, 487, 571, 423, 523, 423, 523, 439, 491, 439)
 
 [node name="Scenary" type="Node2D"]
+script = SubResource("GDScript_qqoki")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 visibility_layer = 2

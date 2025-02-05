@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Nuevo Proyecto de Juego"
+config/name="Huellas Perdidas"
 run/main_scene="res://test1/control.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://WhatsApp Image 2025-02-04 at 11.16.40 PM.png"
 
 [autoload]
 
@@ -31,13 +31,16 @@ directories/dch_directory={
 "PJ": "res://Dialogs/PJ.dch",
 "Phantom": "res://Dialogs/Phantom.dch",
 "Skeleton": "res://Dialogs/llaves/Skeleton.dch",
+"fin": "res://fin.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
 "DialogCHT": "res://DialogCHT.dtl",
 "DialogNPC": "res://Dialogs/DialogNPC.dtl",
 "DialogPHT": "res://Dialogs/DialogPHT.dtl",
-"Dialogosmostrados": "res://Dialogs/Dialogosmostrados.dtl"
+"Dialogosmostrados": "res://Dialogs/Dialogosmostrados.dtl",
+"Inicio": "res://Inicio.dtl",
+"fintimeline": "res://fintimeline.dtl"
 }
 variables={
 "puede_moverse": true
@@ -66,6 +69,10 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 text/autoskip_time_per_event=0.11
+
+[display]
+
+window/size/resizable=false
 
 [editor_plugins]
 

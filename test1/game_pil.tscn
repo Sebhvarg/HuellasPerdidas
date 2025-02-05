@@ -1,16 +1,51 @@
-[gd_scene load_steps=19 format=3 uid="uid://7holqkdxavp5"]
+[gd_scene load_steps=33 format=3 uid="uid://7holqkdxavp5"]
 
 [ext_resource type="PackedScene" uid="uid://d26bwiipep0ad" path="res://PJ/pj/Mapa.tscn" id="1_yjg14"]
 [ext_resource type="Texture2D" uid="uid://cg50akr4k5u2f" path="res://Room/Tiles/tile_0064.png" id="2_y4ncq"]
+[ext_resource type="Texture2D" uid="uid://c34ex2oauymww" path="res://Room/Tiles/tile_0023.png" id="3_jd1d1"]
+[ext_resource type="Texture2D" uid="uid://cawukxja34a8v" path="res://Room/Tiles/tile_0022.png" id="4_c2ehl"]
 [ext_resource type="PackedScene" uid="uid://beqfciyopiox" path="res://PJ/pj/messi.tscn" id="4_j1y0a"]
 [ext_resource type="PackedScene" uid="uid://byd2ju4cbo84e" path="res://PJ/pj/pj.tscn" id="4_qdgj2"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_6w2yl"]
+[ext_resource type="Texture2D" uid="uid://bdjsljln31xa6" path="res://Room/Tiles/tile_0047.png" id="5_vbebc"]
+[ext_resource type="Texture2D" uid="uid://dkn56poxcvv0i" path="res://Room/Tiles/tile_0046.png" id="6_8541v"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_gxcg4"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_iu0ka"]
 [ext_resource type="Texture2D" uid="uid://xqtn7it7ybl4" path="res://Room/Tiles/tile_0112.png" id="7_kpk4j"]
+[ext_resource type="AudioStream" uid="uid://b7sddwv0bk387" path="res://Interstellar 8-Bit No Time For Caution (Docking Scene Music) - Brendan Head.mp3" id="7_q6a8f"]
+[ext_resource type="Script" path="res://keys.gd" id="8_r2d23"]
 [ext_resource type="Texture2D" uid="uid://3kknud070c7a" path="res://Room/Tiles/tile_0121.png" id="9_mqj1i"]
-[ext_resource type="PackedScene" uid="uid://cap22g6lj161l" path="res://test1/control.tscn" id="10_2xpul"]
+[ext_resource type="Texture2D" uid="uid://c0c0otvofhro3" path="res://PC Computer - The Binding of Isaac Rebirth - Celtic Cross.png" id="9_xopnl"]
+[ext_resource type="PackedScene" uid="uid://ccnk1tew2n6xx" path="res://test1/control.tscn" id="10_2xpul"]
 [ext_resource type="Texture2D" uid="uid://dtlbxplv6nqk" path="res://Room/Tiles/tile_0089.png" id="10_33bb6"]
+[ext_resource type="Texture2D" uid="uid://qoknmvor7pv8" path="res://PC Computer - The Binding of Isaac Rebirth - Dead Dove.png" id="10_f8fle"]
+[ext_resource type="Texture2D" uid="uid://ctqc772r62ecw" path="res://PC Computer - The Binding of Isaac Rebirth - Skeleton Key.png" id="11_en1oi"]
+
+[sub_resource type="GDScript" id="GDScript_rks7w"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iq38p"]
+size = Vector2(23, 32)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i6ed8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4qs6"]
+size = Vector2(16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_51ips"]
+radius = 34.1321
 
 [sub_resource type="Resource" id="Resource_r1mk0"]
 script = ExtResource("7_iu0ka")
@@ -32,13 +67,13 @@ radius = 4.0
 height = 12.0
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_loqjk"]
-blend_mode = 3
 light_mode = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_15wf6"]
 size = Vector2(14, 9)
 
 [node name="Game pil" type="Node2D"]
+script = SubResource("GDScript_rks7w")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(510.5, 141)
@@ -53,18 +88,62 @@ position = Vector2(135, -66)
 position = Vector2(706, 385)
 texture = ExtResource("2_y4ncq")
 
+[node name="Puertaabierta3" type="Sprite2D" parent="Scenary"]
+position = Vector2(1011, 847)
+rotation = 1.5708
+texture = ExtResource("3_jd1d1")
+
+[node name="Puertaabierta4" type="Sprite2D" parent="Scenary"]
+position = Vector2(1011, 831)
+rotation = 1.5708
+texture = ExtResource("4_c2ehl")
+
+[node name="Puertacerrada3" type="Sprite2D" parent="Scenary"]
+position = Vector2(1011, 847)
+rotation = 1.5708
+texture = ExtResource("5_vbebc")
+
+[node name="Puertacerrada4" type="Sprite2D" parent="Scenary"]
+position = Vector2(1011, 831)
+rotation = 1.5708
+texture = ExtResource("6_8541v")
+
+[node name="puertaarea" type="Area2D" parent="Scenary"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenary/puertaarea"]
+position = Vector2(1007.5, 839)
+shape = SubResource("RectangleShape2D_iq38p")
+
+[node name="puertas" type="StaticBody2D" parent="Scenary"]
+position = Vector2(1006, 841)
+physics_material_override = SubResource("PhysicsMaterial_i6ed8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenary/puertas"]
+position = Vector2(5, -2)
+shape = SubResource("RectangleShape2D_x4qs6")
+
+[node name="perroaparece" type="Area2D" parent="Scenary"]
+position = Vector2(1135, 836)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Scenary/perroaparece"]
+shape = SubResource("CircleShape2D_51ips")
+
+[node name="bckg" type="AudioStreamPlayer" parent="Scenary"]
+stream = ExtResource("7_q6a8f")
+volume_db = -7.61
+autoplay = true
+
 [node name="Messi" parent="." instance=ExtResource("4_j1y0a")]
 z_index = 1
-position = Vector2(595, 193)
+position = Vector2(1108, 766)
 collision_layer = 3
 collision_mask = 3
 
 [node name="PJ" parent="." groups=["PJS"] instance=ExtResource("4_qdgj2")]
-position = Vector2(595, 193)
+position = Vector2(601, 195)
 
 [node name="Camera2D" type="Camera2D" parent="PJ"]
 physics_interpolation_mode = 1
-position = Vector2(-0.000183105, 4.57764e-05)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="PJ/Camera2D"]
@@ -74,7 +153,7 @@ script = ExtResource("5_6w2yl")
 
 [node name="PhantomCamera2D" type="Node2D" parent="PJ" node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(595, 193)
+position = Vector2(601, 195)
 script = ExtResource("6_gxcg4")
 follow_mode = 5
 follow_target = NodePath("..")
@@ -82,6 +161,7 @@ zoom = Vector2(3, 3)
 tween_resource = SubResource("Resource_r1mk0")
 follow_damping = true
 follow_damping_value = Vector2(0.3, 0.3)
+draw_limits = true
 _preview_noise = false
 
 [node name="NPC1" type="Sprite2D" parent="."]
@@ -124,6 +204,68 @@ shape = SubResource("RectangleShape2D_15wf6")
 
 [node name="Control" parent="." instance=ExtResource("10_2xpul")]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Keys" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 446.0
+offset_top = 99.0
+offset_right = 820.0
+offset_bottom = 168.0
+script = ExtResource("8_r2d23")
+metadata/_edit_use_anchors_ = true
+
+[node name="Celticoff" type="Sprite2D" parent="CanvasLayer/Keys"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-391.349, -58.3486)
+rotation = 0.521853
+scale = Vector2(3, 3)
+texture = ExtResource("9_xopnl")
+
+[node name="Doveoff" type="Sprite2D" parent="CanvasLayer/Keys"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-319.462, -47.4615)
+rotation = 0.521853
+scale = Vector2(3, 3)
+texture = ExtResource("10_f8fle")
+
+[node name="Skeletonoff" type="Sprite2D" parent="CanvasLayer/Keys"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(-234.462, -47.4615)
+rotation = 0.521853
+scale = Vector2(3, 3)
+texture = ExtResource("11_en1oi")
+
+[node name="Celticon" type="Sprite2D" parent="CanvasLayer/Keys"]
+visible = false
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-391.349, -58.3486)
+rotation = 0.521853
+scale = Vector2(3, 3)
+texture = ExtResource("9_xopnl")
+
+[node name="Doveon" type="Sprite2D" parent="CanvasLayer/Keys"]
+visible = false
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-319.462, -47.4615)
+rotation = 0.521853
+scale = Vector2(3, 3)
+texture = ExtResource("10_f8fle")
+
+[node name="Skeletonon" type="Sprite2D" parent="CanvasLayer/Keys"]
+visible = false
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-234.462, -47.4615)
+rotation = 0.521853
+scale = Vector2(3, 3)
+texture = ExtResource("11_en1oi")
+
+[connection signal="body_entered" from="Scenary/puertaarea" to="PJ" method="_on_puertaarea_body_entered"]
+[connection signal="body_entered" from="Scenary/perroaparece" to="PJ" method="_on_perroaparece_body_entered"]
 [connection signal="body_entered" from="NPC1/Area2D" to="PJ" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Fantasma/Fantasmin" to="PJ" method="_on_fantasmin_body_entered"]
 [connection signal="body_entered" from="Cofre/Cofre" to="PJ" method="_on_cofre_body_entered"]

@@ -1,19 +1,24 @@
 join Phantom center
-Phantom: Waaa... En mi tiempoo la rivalidad era entre Bobby Charlton y Endrick
-PJ: Bobby Charlton y Endrick?
-Phantom: Sí... Peroo haaayy un soolo gooaat, ¿tú saaabes quién es?
-- Lionel Andrés Messi
-	Phantom: Correectooo, teen eestoo me lo encontré een el más allaaá.
-	join Skeleton center
-	[wait time="1.0"]
-	leave Skeleton
-	[signal arg="skeleton_get"]
-- Cristanio Ronaldo dos Santos
-	Phantom: Roobandoo?
+Phantom: Teen cuiddaadoo niñoo... hay muchaa gentee mala por el mundoo
+PJ: Gente mala?
+Phantom: Sí... a mí me le dieron vueltaa mi mochilaa...
+PJ: Ush, que gente mala.
+Phantom: Pero buenoo, sé que estás buscaando a tu perroo, creo quee se llamabaa Messii
+PJ: ¿Cómo sabes?
+Phantom: En el más allaá lograas cosas inimaaginablees...
+Phantom: Bien, si quieres la llavee tienes que booh-... reesponder unaa preguntaa booh-, le daas?
+- Confirmo
+	Phantom: ¿Cuál es la cuunaa del reenacimientoo? booh-
+	- Italia
+		Phantom: Afirmativoo, tomaa.
+		join Skeleton center
+		[wait time="1.0"]
+		leave Skeleton
+		[signal arg="skeleton_get"]
+	- Francia
+		Phantom: 2do Franciaa...
+		[end_timeline]
+- Descoonfirmo
+	join Phantom center
+	Phantom: Ten cuidaado niñoo booh-
 	[end_timeline]
-- Antony Matheus dos Santos
-	Phantom: Exaactoo, correctoo..
-	join Skeleton center
-	[wait time="0.4"]
-	leave Skeleton
-	[signal arg="skeleton_get"]

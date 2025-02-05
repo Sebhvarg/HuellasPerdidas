@@ -7,6 +7,7 @@ var speed = 150
 var idle_repetido = false
 func _ready():
 	var jugadores = get_tree().get_nodes_in_group("PJS")
+	$".".visible = false
 	if jugadores.size() > 0:
 		jugador = jugadores[0]
 
@@ -45,3 +46,6 @@ func reproducir_animacion_idle():
 		idle_repetido = true  # Marca que ya se reprodujo una vez
 		
 	animations.play("Idle 2")  # Luego, siempre reproduce "Idle 2"
+
+func mostrar_perro():
+	$".".visible = true

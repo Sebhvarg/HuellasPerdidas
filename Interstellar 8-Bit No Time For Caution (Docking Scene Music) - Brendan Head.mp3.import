@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7sddwv0bk387"
+path="res://.godot/imported/Interstellar 8-Bit No Time For Caution (Docking Scene Music) - Brendan Head.mp3-f309a80d8af1f8fc9d97255492d7b715.mp3str"
+
+[deps]
+
+source_file="res://Interstellar 8-Bit No Time For Caution (Docking Scene Music) - Brendan Head.mp3"
+dest_files=["res://.godot/imported/Interstellar 8-Bit No Time For Caution (Docking Scene Music) - Brendan Head.mp3-f309a80d8af1f8fc9d97255492d7b715.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

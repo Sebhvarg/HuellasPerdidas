@@ -1,17 +1,22 @@
 join NPC center
-NPC: Hey niño, ¿quieres una llave?
-- Hágale mijin
-	NPC: ¿Cuántas copas américas tiene Messi
+NPC: Hey, este lugar guarda muchos secretos...
+PJ: ¿Cómo cuales?
+NPC: Este lugar fue un refugio de la segunda guerra mundial...
+PJ: Tetrico.
+NPC: Demasiado... ¿No quieres un objeto raro?, lo conseguí por ahí.
+NPC: Pero deberas responder una pregunta, aceptas?
+- Simón
+	NPC: ¿Cuántas copas américas tiene Messi?
 	- 2
-		NPC: ¡Correcto, tenga esta llave!
+		NPC: ¡Correcto,  tomá!
 		join Celtic center
 		[wait time="1.0"]
 		join  center
 		leave Celtic [length="0.6"]
 		[signal arg="celtic_get"]
 	- 3
-		NPC: Bobo.
+		NPC: Genial! fallaste!
 	[end_timeline]
 - No
-	NPC: Posi, conste, bobo.
+	NPC: Posi, conste.
 	[end_timeline]
