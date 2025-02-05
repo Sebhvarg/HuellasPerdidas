@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cap22g6lj161l"]
+[gd_scene load_steps=12 format=3 uid="uid://cap22g6lj161l"]
 
 [ext_resource type="Script" path="res://test1/control.gd" id="1_1ma3l"]
 [ext_resource type="Texture2D" uid="uid://bqiaay4o3u7h4" path="res://assets/bg_Home.png" id="2_0i6vy"]
 [ext_resource type="Texture2D" uid="uid://7al2l0cjwsej" path="res://PJ/dog..png" id="3_ey50j"]
+[ext_resource type="Theme" uid="uid://06xyeymbh2k0" path="res://assets/button/button.tres" id="4_6p8wl"]
+[ext_resource type="FontFile" uid="uid://ddcqu5mvrkw1n" path="res://assets/fonts/Pixel Digivolve.otf" id="4_t7buu"]
+[ext_resource type="Texture2D" uid="uid://wte0gyito62n" path="res://assets/huellas.png" id="6_pbbus"]
 
 [sub_resource type="Animation" id="Animation_lvgd4"]
 length = 8.0
@@ -42,6 +45,17 @@ _data = {
 "inicio": SubResource("Animation_dyb0y")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_1efl3"]
+font = ExtResource("4_t7buu")
+font_size = 67
+font_color = Color(0, 0, 0, 1)
+shadow_size = 27
+shadow_color = Color(1, 0.388235, 0.356863, 0.772549)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jdg7x"]
+font = ExtResource("4_t7buu")
+font_size = 67
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -76,23 +90,64 @@ frame = 28
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 486.0
-offset_top = 265.0
-offset_right = 1100.0
-offset_bottom = 507.0
+offset_left = 462.0
+offset_top = 240.0
+offset_right = 1076.0
+offset_bottom = 482.0
+scale = Vector2(0.997311, 1.11753)
+theme_override_constants/separation = 38
 
 [node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
+theme = ExtResource("4_6p8wl")
 text = "Jugar
 "
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
+theme = ExtResource("4_6p8wl")
 text = "Salir
 "
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(587, 326)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 48.0
+offset_right = 1104.0
+offset_bottom = 173.0
+text = "HUELLAS PERDIDAS"
+label_settings = SubResource("LabelSettings_1efl3")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 44.0
+offset_right = 1100.0
+offset_bottom = 169.0
+text = "HUELLAS PERDIDAS"
+label_settings = SubResource("LabelSettings_jdg7x")
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1097, 147)
+rotation = 0.659013
+scale = Vector2(0.482697, 0.482697)
+texture = ExtResource("6_pbbus")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 568.0
+offset_right = 956.0
+offset_bottom = 591.0
+text = "Juego desarrollado por: Leonardo Holguin Vargas"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="salir_btn"]

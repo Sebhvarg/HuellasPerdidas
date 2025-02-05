@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://7holqkdxavp5"]
+[gd_scene load_steps=19 format=3 uid="uid://7holqkdxavp5"]
 
 [ext_resource type="PackedScene" uid="uid://d26bwiipep0ad" path="res://PJ/pj/Mapa.tscn" id="1_yjg14"]
 [ext_resource type="Texture2D" uid="uid://cg50akr4k5u2f" path="res://Room/Tiles/tile_0064.png" id="2_y4ncq"]
